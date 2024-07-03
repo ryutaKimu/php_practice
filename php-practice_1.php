@@ -4,7 +4,7 @@ $name = "安藤";
 echo "私の名前は「{$name}」です。";
 
 // Q2 四則演算
-$num = 5*4;
+$num = 5 * 4;
 echo $num . "\n";
 echo $num / 2;
 
@@ -24,7 +24,7 @@ if ($device === "mac" || $device === "windows") {
 
 // Q5 条件分岐-2 三項演算子
 $age = 20;
-echo  ($age >= 18) ? "成人です。" : "未成年です。";
+echo ($age >= 18) ? "成人です。" : "未成年です。";
 
 
 // Q6 配列
@@ -92,11 +92,11 @@ greeting("金谷");
 greeting("安藤");
 
 // Q11 関数-2
-const Tax = 1.1;
+const TAX = 1.1;
 
 function calcTaxInPrice($price)
 {
-    echo $price . "円の商品の税込み価格は" . $price * Tax . "円です。";
+    echo $price . "円の商品の税込み価格は" . $price * TAX . "円です。";
 }
 
 calcTaxInPrice(1000);
@@ -130,7 +130,7 @@ function evaluateGrade($grade)
             echo '不合格です。';
             break;
 
-            default:
+        default:
             echo "判定不明です。講師に問い合わせてください。";
     }
 }
