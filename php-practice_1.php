@@ -10,7 +10,7 @@ echo $num / 2;
 
 // Q3 日付操作
 date_default_timezone_set('Asia/Tokyo');
-echo "現在時刻は" . date("Y年m月d日 H時i分s秒") . "です。";
+echo '現在時刻は' . date("Y年m月d日 H時i分s秒") . 'です。';
 
 
 // Q4 条件分岐-1 if文
@@ -46,16 +46,16 @@ $prefectures = [
     '愛知県' => '関西'
 ];
 
-foreach ($prefectures as $item => $value) {
-    echo $item . ':' . $value . "\n";
+foreach ($prefectures as $prefecture) {
+    echo $prefecture . '\n';
 }
 
 
 // Q8 連想配列-2
 
-foreach ($prefectures as $item => $value) {
-    if ($item === "埼玉県" && $value === "さいたま市") {
-        echo $item . "の県庁所在地は," . $value . "です。";
+foreach ($prefectures as $prefecture => $city) {
+    if ($prefecture === "埼玉県" && $city === "さいたま市") {
+        echo $prefecture . 'の県庁所在地は,' . $city . 'です。';
     }
 }
 
@@ -73,11 +73,11 @@ $kantoPrefectures = [
     '茨城県'
 ];
 
-foreach ($prefectures as $item => $value) {
-    if (!in_array($item, $kantoPrefectures)) {
-        echo $item . "は関東ではありません。" . "\n";
+foreach ($prefectures as $prefecture => $city) {
+    if (!in_array($prefecture, $kantoPrefectures)) {
+        echo $prefecture. 'は関東ではありません。' . `\n`;
     } else {
-        echo $item . "の県庁所在地は," . $value . "です。" . "\n";
+        echo $item . 'の県庁所在地は,' . $value . 'です。' . `\n`;
     }
 }
 
@@ -85,27 +85,27 @@ foreach ($prefectures as $item => $value) {
 
 function greeting($name)
 {
-    echo $name . "さん,こんにちは。";
+    echo $name . 'さん,こんにちは。';
 }
 
 greeting("金谷");
 greeting("安藤");
 
 // Q11 関数-2
-const Tax = 1.1;
 
-function calcTaxInPrice($price)
-{
-    echo $price . "円の商品の税込み価格は" . $price * Tax . "円です。";
+const TAX = 1.1;
+
+function calcTaxInPrice($price){
+    return $price * TAX;
 }
 
-calcTaxInPrice(1000);
-
+$taxInPrice = calcTaxInPrice(1000);
+echo "1000円の商品の税込み価格は{$taxInPrice}円です。";
 
 // Q12 関数とif文
 function distinguishNum($num)
 {
-    return $num = ($num % 2 === 0) ? $num . 'は偶数です。' : $num . "は奇数です";
+    return $num = ($num % 2 === 0) ? $num . 'は偶数です。' : $num . 'は奇数です';
 }
 $result = distinguishNum(10);
 echo $result;
@@ -131,8 +131,13 @@ function evaluateGrade($grade)
             break;
 
             default:
-            echo "判定不明です。講師に問い合わせてください。";
+            echo '判定不明です。講師に問い合わせてください。';
     }
 }
 
 evaluateGrade("A");
+
+
+$now = new DateTime();
+$prev = new DateTime('2000-1-1');
+echo $prev->diff($now)->format('%a');
