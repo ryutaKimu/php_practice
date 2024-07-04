@@ -2,13 +2,13 @@
 // Q1 tic-tac問題
 for($i = 1; $i <= 100; $i++){
     if($i % 4 == 0 && $i % 5 == 0){
-        echo "tic-tac"."\n";
+        echo 'tic-tac'.`\n`;
     }elseif($i % 4 == 0){
-        echo "tic"."\n";
+        echo 'tic'.`\n`;
     }elseif($i % 5 == 0){
-        echo "tac"."\n";
+        echo 'tac'.`\n`;
     }else{
-        echo $i . "\n";
+        echo $i . `\n`;
     }
 }
 
@@ -36,7 +36,7 @@ echo $personalInfos[1]['name'] . 'さんの電話番号は' . $personalInfos[1][
 $i = 0;
 foreach( $personalInfos as $personalInfo){
  $i++;
- echo $i."番目の".$personalInfo['name']."さんのメールアドレスは".$personalInfo['mail']."で、電話番号は".$personalInfo['tel']."です。\n";
+ echo $i.'番目の'.$personalInfo['name'].'さんのメールアドレスは'.$personalInfo['mail'].'で、電話番号は'.$personalInfo['tel'].'です。'. `\n`;
 }
 
 
@@ -65,10 +65,10 @@ class Student
 }
 
 $yamada = new Student(2001823,"木村");
-echo "学籍番号" . $yamada->studentId."番の生徒は".$yamada->studentName."です";
+echo '学籍番号' . $yamada->studentId.'番の生徒は'.$yamada->studentName.'です';
 
 // Q4 オブジェクト-2
-echo $yamada->attend("PHP") ."学籍番号:" . $yamada->studentId;
+echo $yamada->attend("PHP") .'学籍番号:' . $yamada->studentId;
 
 // Q5 定義済みクラス
 $date = new DateTime('now');
@@ -82,6 +82,6 @@ $targetDate = new DateTime($dateString);
 $interval = $today->diff($targetDate);
 
 $dayDifference = $interval->days;
-echo "あの日から".$dayDifference."日経過しました";
+echo 'あの日から'.$dayDifference.'日経過しました';
 
 ?>
