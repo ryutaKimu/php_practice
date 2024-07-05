@@ -34,6 +34,14 @@
     }
 }
 
+# 6 問題の出力結果と異なっていないでしょうか？
+
+  foreach ($prefectures as $prefecture => $city) {
+  echo $city . '\n';
+}
+
+上記のように修正いたしました。
+
 # 6 returnで実行結果を返さない場合は、return以下のコードは実行されますか？
 
 <?php
